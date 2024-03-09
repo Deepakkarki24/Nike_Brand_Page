@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    width: 100%;
+    position: relative;
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    height: 100%;
+}
+
+.logo_box {
+    cursor: pointer;
+}
+
+.nav-items li {
+    height: 100%;
+    line-height: 60px;
+    cursor: pointer;
+}
+
+.heroSection {
+    height: calc(100vh - 72px);
+    padding-top: 60px;
+}
+
+.heroContent h2 {
+    font-size: 100px;
+    font-family: "poppins", "sans-serif";
+    font-weight: 800;
+    line-height: 80px;
+    color: #000;
+}
+
+.heroContent .descText {
+    font-size: 16px;
+    color: gray;
+    max-width: 404px;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.btn-transparent {
+    border: 1px solid #000;
+}
+
+.brand_img {
+    margin: 20px 0;
+    display: flex;
+    gap: 16px;
+}
+
+.heroImage {
+    position: relative;
+}
+
+.heroImage img {
+    position: absolute;
+    animation-name: movingShoe;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    width: 100%;
+}
+
+@keyframes movingShoe {
+    from {
+        top: 0px;
+    }
+
+    to {
+        top: 20px;
+    }
+}
+
+
+@media (max-width: 760px) {
+    .heroContent h2 {
+        font-size: 60px;
+        line-height: 55px;
+    }
+
+    .heroContent .descText {
+        font-size: 14px;
+    }
+
+    .nav-items {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: #6e6e6e;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        color: #fff;
+        position: fixed;
+        padding: 0;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        transition: all ease-in-out .7s;
+    }
+
+    .nav-items_hide {
+        max-height: 100vh;
+        transition: all ease-in-out .7s;
+    }
+
+    .nav-items li {
+        height: auto;
+        padding: 20px 40px;
+        font-size: 30px;
+    }
+
+    .navbar-container {
+        padding: 0 !important;
+    }
+
+    .login {
+        display: none;
+    }
+
+    .logo_box {
+        padding-left: 20px;
+    }
+
+    .hamburger {
+        display: block !important;
+    }
+}
+
+.hamburger {
+    display: none;
+    font-size: 20px;
+    color: #000;
+    position: absolute;
+    z-index: 999;
+    right: 10px;
+    top: 10px;
+}
